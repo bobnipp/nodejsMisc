@@ -1,0 +1,10 @@
+This is a module with multiple files.  The index.js is read by default
+
+usage:
+	var x = require('./logger')
+	x.log(...);
+	x.logEval( function(){...} );
+
+"config.json" is read in for configuration data using the 'require' function
+
+

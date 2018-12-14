@@ -1,0 +1,29 @@
+<html>				
+	<head>
+		<link href="/assets/style.css" type="text/css" rel="stylesheet"/>
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+	<body>
+		<h1>Here in EJS...</h1> 
+		<h3>URL params:  <%= ID %></h3>
+		<h3>Query String:  <%= QueryStr %></h3>
+
+		<form method="POST" action="/person">
+			First: <input id="firstname" name="firstname"/>
+			Last: <input id="lastname" name="lastname"/>
+			<input type="submit" value="GO!" />
+		</form>
+
+		<script>
+			// Can also use PostMan (remember to set content type)
+			console.log('Sending AJAX POST...');
+			$.ajax({
+				type: 'POST',
+				url: '/personEndpoint',
+				data: JSON.stringify( { firstname: 'Jim', lastname: 'Jones' } ),
+				dataType: 'json',
+				contentType: 'application/json'
+			});
+		</script>
+	</body> 
+</html>
